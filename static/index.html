@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Favorites</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <form id="food-form">
+            <label for="name">Food Name:</label>
+            <input type="text" id="name" required><br>
+
+            <label for="description">Description:</label>
+            <input type="text" id="description" required><br>
+
+            <label for="image-url">Image URL:</label>
+            <input type="text" id="image-url" required><br>
+
+            <label for="rank">Rank:</label>
+            <input type="number" id="rank" required><br>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div class="container">
+            <div class="tabs">
+                <div class="tab active">FAVORITE FOODS</div>
+                <div class="tab">FAVORITE SONGS</div>
+                <div class="tab">FAVORITE QUOTES</div>
+            </div>
+
+            <div class="content" id="content-section">
+                <!-- food cards will be dynamically added here -->
+            </div>
+
+            <div class="ads">
+                <p style="text-align: center;">ADS</p>
+                <img src="https://i.pinimg.com/originals/f5/e5/b7/f5e5b73bfbd46a2052d0ceb3ac2bfa71.jpg" alt="Advertisement 1">
+                <img src="https://image.adsoftheworld.com/65bfpiteroq1oo5ueeg9h3o1bw5y" alt="Advertisement 2">
+                <img src="https://www.wordstream.com/wp-content/uploads/2021/07/oldtimer-tunnel-ad.jpg" alt="Advertisement 3">
+            </div>
+        </div>
+
+        <script type="text/javascript" src="form.js"></script>
+    </body>
+</html>

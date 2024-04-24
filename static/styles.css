@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+}
+
+/* form styling */
+form {
+    margin-top: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="number"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+form button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+/* tab styling */
+.tabs {
+    width: 150px;
+    background-color: #f0f0f0;
+    border-right: 1px solid #ccc;
+}
+
+.tab {
+    padding: 10px;
+    cursor: pointer;
+    color: #333;
+}
+
+.tab.active {
+    background-color: #666;
+    color: #fff;
+}
+
+/* content or food card styling */
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content-item {
+    width: calc(20%);
+    height: fit-content;
+    margin: 10px;
+    background-color: #666;
+    padding: 20px;
+    color: #fff;
+    position: relative;
+}
+
+.content-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.content-item h2 {
+    margin-top: 0;
+}
+
+.content-item p {
+    margin-bottom: 10px;
+}
+
+.content-item button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #fff;
+    color: #666;
+    cursor: pointer;
+}
+
+.content-item button:hover {
+    background-color: #ccc;
+}
+
+/* ads styling */
+.ads {
+    width: 200px;
+    background-color: #666;
+    padding: 20px;
+}
+
+.ads img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
+}
