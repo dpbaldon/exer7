@@ -1,25 +1,31 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // get references to the form and the container
     const form = document.getElementById('food-form');
     const foodCardsContainer = document.getElementById('content-section');
 
+    // event listener for form submission
     form.addEventListener('submit', function(event) {
-        event.preventDefault();
-
+        event.preventDefault(); // prevent default form submission behavior
+        
+        // get input values from the form
         const foodName = document.getElementById('name').value.trim();
         const foodDescription = document.getElementById('description').value.trim();
         const foodImageUrl = document.getElementById('image-url').value.trim();
         const foodRank = parseInt(document.getElementById('rank').value);
 
+        // validate input fields
         if (foodName === '' || foodDescription === '' || foodImageUrl === '' || isNaN(foodRank)) {
             alert('Please fill in all fields correctly.');
             return;
         }   
 
+        // create a new food card with the input data
         const newFoodCard = createFoodCard(foodName, foodDescription, foodImageUrl, foodRank);
-        insertFoodCard(newFoodCard, foodRank);
-        form.reset();
+        insertFoodCard(newFoodCard, foodRank); // insert food card into content container
+        form.reset(); // reset the form
     });
 
+    // function to create a new food card element
     function createFoodCard(name, description, imageUrl, rank) {
         const card = document.createElement('div');
         card.classList.add('content-item');
@@ -48,6 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
         return card;
     }
 
+    // function to insert a food card into the content container based on its rank
     function insertFoodCard(card, rank) {
         const cards = foodCardsContainer.children;
         let inserted = false;
