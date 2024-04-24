@@ -20,12 +20,11 @@ document.addEventListener("DOMContentLoaded", function() {
         }   
 
         // create a new food card with the input data
-        const newFoodCard = createFoodCard(foodName, foodDescription, foodImageUrl, foodRank);
-        insertFoodCard(newFoodCard, foodRank); // insert food card into content container
+        createFoodCard(foodName, foodDescription, foodImageUrl, foodRank);
         form.reset(); // reset the form
     });
 
-    // function to create a new food card element
+    // function to create a new food card element and insert it into the container based on its rank
     function createFoodCard(name, description, imageUrl, rank) {
         const card = document.createElement('div');
         card.classList.add('content-item');
@@ -51,17 +50,13 @@ document.addEventListener("DOMContentLoaded", function() {
         card.appendChild(desc);
         card.appendChild(deleteBtn);
 
-        return card;
-    }
-
-    // function to insert a food card into the content container based on its rank
-    function insertFoodCard(card, rank) {
+        // insert the card into the container based on its rank
         const cards = foodCardsContainer.children;
         let inserted = false;
 
         for (let i = 0; i < cards.length; i++) {
-            const cardRank = parseInt(cards[i].querySelector('h2').textContent);
-            if (cardRank < rank) {
+            const cardRank = cards[i].getAttribute(rank);
+            if (cardRank <= rank) {
                 foodCardsContainer.insertBefore(card, cards[i]);
                 inserted = true;
                 break;
